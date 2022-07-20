@@ -1,18 +1,40 @@
+""" Module allows forward kinematics to be calculated"""
+from typing import Tuple, List, Any
+
 import numpy as np
 import math
 
 
 class FkSolver:
-    # TODO Create class discretion
-    def __init__(self, link1, link2, link3, link4, link5):
+    """ Class allows to calculate forward kinematics of the robotic arm with given parameters and specified length of robotic arm links.
+    Forward kinematics is being calculated using Denavit–Hartenberg notation.\n """
+
+    def __init__(self, link1: int, link2: int, link3: int, link4: int, link5: int) -> None:
+        """
+        Initials parameters and dimensions of robotic arm. \n
+        :param link1: base height
+        :param link2: 1st links length
+        :param link3: 2nd links length
+        :param link4: "L" effector dimension
+        :param link5: "H" effector dimension
+        """
+
         self.link1 = link1
         self.link2 = link2
         self.link3 = link3
         self.link4 = link4
         self.link5 = link5
 
-    def dh(self, theta1, theta2, theta3, theta4):
-        # TODO Create method discretion
+    def dh(self, theta1: float, theta2: float, theta3: float, theta4: float) -> np.array:
+        """
+        Method creates dh table with the given parameters.\n
+        :param theta1: Base rotation angle
+        :param theta2: 1st link rotation angle
+        :param theta3: 2nd link rotation angle
+        :param theta4: 3rd link rotation angle
+        :return: dh_table
+        """
+
         # Convert angels in degrees to radians
         theta1 = math.radians(theta1)
         theta2 = math.radians(theta2)
@@ -28,9 +50,14 @@ class FkSolver:
         return table_dh
 
     @staticmethod
-    def hom_Matrix(table_dh, i):
-        # TODO Create method discretion
-        # Generation of homogenous transformation matrices Ti
+    def hom_Matrix(table_dh, i: int) -> np.array:
+        """
+        Generation of homogenous transformation matrices Ti. \n
+        :param table_dh: Denavit–Hartenbergs table
+        :param i: Number of transformations
+        :return: t_dh - Homogenous trans. matrix Ti
+        """
+
         t_dh = np.array([
             [math.cos(table_dh[i, 0]), (-1 * math.sin(table_dh[i, 0]) * math.cos(table_dh[i, 3])),
              (math.sin(table_dh[i, 0]) * math.sin(table_dh[i, 3])),
@@ -43,8 +70,12 @@ class FkSolver:
         return t_dh
 
     @staticmethod
-    def solver(table_dh):
-        # TODO Create method discretion
+    def solver(table_dh) -> Tuple[int, List[Tuple[float, float, float]], str]:
+        """
+        Forward kinematics end effector xyz pos. solver. \n
+        :param table_dh: Denavit–Hartenbergs table
+        :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
+        """
         matrix_t = FkSolver.hom_Matrix(table_dh, 0)
         xyz_pos1 = []
 
@@ -69,17 +100,31 @@ class FkSolver:
             status = "Sth went wrong"
             return 0, [], status
 
-    def solve_auto(self, theta1, theta2, theta3, theta4):
-        # TODO Create method discretion
+    def solve_auto(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[
+        int, List[Tuple[float, float, float]], str]:
+        """
+        Calculate end effectors xyz pos. with given rotations of initialized robotic model.\n
+        :param theta1: Base rotation angle
+        :param theta2: 1st link rotation angle
+        :param theta3: 2nd link rotation angle
+        :param theta4: 3rd link rotation angle
+        :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
+        """
         table_dh = FkSolver.dh(self, theta1, theta2, theta3, theta4)
         return FkSolver.solver(table_dh)
 
     @staticmethod
-    def solve_user(table_dh):
-        # TODO Create method discretion
+    def solve_user(table_dh) -> Tuple[int, List[Tuple[float, float, float]], str]:
+        """
+        Calculate end effectors xyz pos. with given dh table.\n
+        :param table_dh: Denavit–Hartenbergs table
+        :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
+        """
         return FkSolver.solver(table_dh)
 
+
 # TODO Create error exceptions
+# TODO Create comments
 
 # test
 Robot = FkSolver(118, 150, 0, 54, 0)
