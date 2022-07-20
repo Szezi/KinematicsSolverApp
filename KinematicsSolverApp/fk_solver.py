@@ -1,5 +1,5 @@
 """ Module allows forward kinematics to be calculated"""
-from typing import Tuple, List, Any
+from typing import Tuple, List
 
 import numpy as np
 import math
@@ -87,21 +87,27 @@ class FkSolver:
 
         # End effector orientation
         try:
-            z_ef = round(matrix_t[2, 3]) - round(xyz_pos1[-3][-1])
-            alpha = math.degrees(math.asin(z_ef / round(table_dh[-2][-2])))
-            status = "Forward kinematics calculations ended successfully"
-            return round(alpha), xyz_pos1, status
+            if round(xyz_pos1[-3][-1]) == 0:
+                raise ZeroDivisionError
+            else:
+                # z-ef - "z" dimension between last links "z" dim and end effector "z" dim.
+                z_ef = round(matrix_t[2, 3]) - round(xyz_pos1[-3][-1])
+                # alpha - z_ef / links4_length
+                alpha = math.degrees(math.asin(z_ef / round(table_dh[-2][-2])))
+                status = "Forward kinematics calculations ended successfully"
+                return round(alpha), xyz_pos1, status
 
         except RuntimeError as error:
-            status = error
-            return 0, [], status
-
+            status = str(error)
+            return 0, [(0, 0, 0)], status
+        except ZeroDivisionError as error:
+            status = str(error)
+            return 0, [(0, 0, 0)], status
         except:
             status = "Sth went wrong"
-            return 0, [], status
+            return 0, [(0, 0, 0)], status
 
-    def solve_auto(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[
-        int, List[Tuple[float, float, float]], str]:
+    def solve_auto(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[int, List[Tuple[float, float, float]], str]:
         """
         Calculate end effectors xyz pos. with given rotations of initialized robotic model.\n
         :param theta1: Base rotation angle
@@ -122,9 +128,6 @@ class FkSolver:
         """
         return FkSolver.solver(table_dh)
 
-
-# TODO Create error exceptions
-# TODO Create comments
 
 # test
 Robot = FkSolver(118, 150, 0, 54, 0)
