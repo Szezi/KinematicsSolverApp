@@ -44,6 +44,16 @@ class TestFkSolver:
 
         assert np.allclose(result[0], array_test)
 
+    def test_dh_int_not_float(self):
+        robot = fk_solver.FkSolver(118, 150, 150, 54, 0)
+        result = robot.dh(0, 90.0, 0.0, 0.0)
+        assert result[1] == "Thetas values must be float"
+
+    def test_dh_string_not_float(self):
+        robot = fk_solver.FkSolver(118, 150, 150, 54, 0)
+        result = robot.dh("a", 90.0, 0.0, 0.0)
+        assert result[1] == "Thetas values must be float"
+
     def test_solver(self):
         table_dh = np.array([[0, 118, 0, math.radians(90)],
                              [math.radians(90), 0, 150, 0],
@@ -83,6 +93,16 @@ class TestFkSolver:
         result = robot.solve_auto(0.0, 90.0, 0.0, 0.0)
         assert result == (90, [(0.0, 0.0, 268.0), (0.0, 0.0, 418.0), (0.0, 0.0, 472.0), (0.0, 0.0, 472.0)],
                           'Forward kinematics calculations ended successfully')
+
+    def test_solve_auto_int_not_float(self):
+        robot = fk_solver.FkSolver(118, 150, 150, 54, 0)
+        result = robot.solve_auto(0, 90.0, 0.0, 0.0)
+        assert result == (0, [(0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)], 'Thetas values must be float')
+
+    def test_solve_auto_string_not_float(self):
+        robot = fk_solver.FkSolver(118, 150, 150, 54, 0)
+        result = robot.solve_auto("a", 90.0, 0.0, 0.0)
+        assert result == (0, [(0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)], 'Thetas values must be float')
 
     def test_solve_user(self):
         table_dh = np.array([[0, 118, 0, math.radians(90)],
