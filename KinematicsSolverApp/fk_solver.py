@@ -116,6 +116,7 @@ class FkSolver:
         :param dh_table: Denavit–Hartenbergs table
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
+
         matrix_t = FkSolver.hom_matrix(dh_table, 0)
         xyz_pos1 = []
 
@@ -157,10 +158,16 @@ class FkSolver:
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
         try:
-            table_dh = FkSolver.dh(self, theta1, theta2, theta3, theta4)
-            return FkSolver.solver(table_dh[0])
-        except TypeError:
-            status = "Robot configurations not defined correctly"
+            if not isinstance(theta1, float) or not isinstance(theta2, float) or not isinstance(theta3,
+                                                                                                float) or not isinstance(
+                    theta4, float):
+                raise TypeError("Thetas values must be float")
+            else:
+                table_dh = FkSolver.dh(self, theta1, theta2, theta3, theta4)
+                return FkSolver.solver(table_dh[0])
+
+        except TypeError as error:
+            status = str(error)
             return_error = (0, [(0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0)],
                             status)
             return return_error
@@ -173,8 +180,3 @@ class FkSolver:
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
         return FkSolver.solver(dh_table)
-
-
-robot = FkSolver(118, 150, 150, 54, 0)
-print(robot.solve_auto(0.0, 90.0, 0.0, 0.0))
-print(robot.dh(0.0, 90.0, 0.0, 0.0))
