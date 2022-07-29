@@ -1,6 +1,5 @@
 """ Module allows forward kinematics to be calculated"""
 from typing import Tuple, List
-
 import numpy as np
 import math
 
@@ -9,19 +8,66 @@ class FkSolver:
     """ Class allows to calculate forward kinematics of the robotic arm with given parameters and specified length of robotic arm links.
     Forward kinematics is being calculated using Denavit–Hartenberg notation.\n """
 
-    def __init__(self, link1: int, link2: int, link3: int, link4: int, link5: int) -> None:
+    def __init__(self, links: dict) -> None:
         """
         Initials parameters and dimensions of robotic arm. \n
-        :param link1: base height
-        :param link2: 1st links length
-        :param link3: 2nd links length
-        :param link4: "L" effector dimension
-        :param link5: "H" effector dimension
+        Example: link1:[length, min range, max range] \n
+        links = {"link1": [118, -80, 80],
+         "link2": [150, 5, 175],
+         "link3": [150, - 115, 55],
+         "link4": [54, -85, 85],
+         "link5": [0, 0, 0]}
+
+         :param links: dictionary
         """
-        try:
-            if not isinstance(link1, int) or not isinstance(link2, int) or not isinstance(link3, int) or not isinstance(
-                    link4, int) or not isinstance(link5, int):
-                status = "Links dimensions must be integers"
+        # Dictionary
+        self.links = links
+
+        # Lengths of links
+        self.link1 = links["link1"][0]
+        self.link2 = links["link2"][0]
+        self.link3 = links["link3"][0]
+        self.link4 = links["link4"][0]
+        self.link5 = links["link5"][0]
+
+        # Range of links
+        self.link1_min = links["link1"][1]
+        self.link1_max = links["link1"][2]
+        self.link2_min = links["link2"][1]
+        self.link2_max = links["link2"][2]
+        self.link3_min = links["link3"][1]
+        self.link3_max = links["link3"][2]
+        self.link4_min = links["link4"][1]
+        self.link4_max = links["link4"][2]
+        self.link5_min = links["link5"][1]
+        self.link5_max = links["link5"][2]
+
+        # Variables to find
+        self.theta33 = None  # config 2
+        self.theta22 = None  # config 2
+        self.theta11 = None  # config 2
+        self.theta3 = None  # config 1
+        self.theta2 = None  # config 1
+        self.theta1 = None  # config 1
+        self.theta0 = None  # config 1 and 2
+
+        FkSolver.fk_check_input_param(self)
+
+    def fk_check_input_param(self):
+        if not isinstance(self.link1, int) or not isinstance(self.link2, int) or not isinstance(
+                self.link3, int) or not isinstance(
+                self.link4, int) or not isinstance(self.link5, int):
+            status = "Links dimensions must be integers"
+            print(status)
+            self.link1 = None
+            self.link2 = None
+            self.link3 = None
+            self.link4 = None
+            self.link5 = None
+        else:
+            if self.link1 < 0 or self.link2 < 0 or self.link3 < 0 or self.link4 < 0 or \
+                    self.link5 < 0:
+                status = "Links dimensions must be equal or greater then 0"
                 print(status)
                 self.link1 = None
                 self.link2 = None
@@ -29,26 +75,11 @@ class FkSolver:
                 self.link4 = None
                 self.link5 = None
             else:
-                if link1 < 0 or link2 < 0 or link3 < 0 or link4 < 0 or link5 < 0:
-                    status = "Links dimensions must be equal or greater then 0"
-                    print(status)
-                    self.link1 = None
-                    self.link2 = None
-                    self.link3 = None
-                    self.link4 = None
-                    self.link5 = None
-                else:
-                    status = "Links dimensions ok"
-                    print(status)
-                    self.link1 = link1
-                    self.link2 = link2
-                    self.link3 = link3
-                    self.link4 = link4
-                    self.link5 = link5
-        except TypeError as error:
-            print(str(error))
+                status = "Links dimensions ok"
+                print(status)
+                pass
 
-    def dh(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[np.array, str]:
+    def fk_dh(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[np.array, str]:
         """
         Method creates dh table with the given parameters.\n
         :param theta1: Base rotation angle
@@ -90,7 +121,7 @@ class FkSolver:
             return return_error, str(status)
 
     @staticmethod
-    def hom_matrix(dh_table: np.array, i: int) -> np.array:
+    def fk_hom_matrix(dh_table: np.array, i: int) -> np.array:
         """
         Generation of homogenous transformation matrices Ti. \n
         :param dh_table: Denavit–Hartenbergs table
@@ -110,19 +141,19 @@ class FkSolver:
         return t_dh
 
     @staticmethod
-    def solver(dh_table) -> Tuple[int, List[Tuple[float, float, float]], str]:
+    def fk_solver(dh_table) -> Tuple[int, List[Tuple[float, float, float]], str]:
         """
         Forward kinematics end effector xyz pos. solver. \n
         :param dh_table: Denavit–Hartenbergs table
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
 
-        matrix_t = FkSolver.hom_matrix(dh_table, 0)
+        matrix_t = FkSolver.fk_hom_matrix(dh_table, 0)
         xyz_pos1 = []
 
         # Determination of the homogenous transformation matrices
         for number in range(1, len(dh_table)):
-            matrix_t = matrix_t @ FkSolver.hom_matrix(dh_table, number)
+            matrix_t = matrix_t @ FkSolver.fk_hom_matrix(dh_table, number)
             xyz_pos = float(round(matrix_t[0, 3])), float(round(matrix_t[1, 3])), float(round(matrix_t[2, 3]))
             xyz_pos1.append(xyz_pos)
         # End effector orientation
@@ -147,8 +178,8 @@ class FkSolver:
             status = "Sth went wrong"
             return 0, [(0, 0, 0)], status
 
-    def solve_auto(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[
-                    int, List[Tuple[float, float, float]], str]:
+    def fk_solve_auto(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[
+        int, List[Tuple[float, float, float]], str]:
         """
         Calculate end effectors xyz pos. with given rotations of initialized robotic model.\n
         :param theta1: Base rotation angle
@@ -158,13 +189,12 @@ class FkSolver:
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
         try:
-            if not isinstance(theta1, float) or not isinstance(theta2, float) or not isinstance(theta3,
-                                                                                                float) or not isinstance(
-                    theta4, float):
+            if not isinstance(theta1, float) or not isinstance(theta2, float) or not isinstance(theta3, float) \
+                    or not isinstance(theta4, float):
                 raise TypeError("Thetas values must be float")
             else:
-                table_dh = FkSolver.dh(self, theta1, theta2, theta3, theta4)
-                return FkSolver.solver(table_dh[0])
+                table_dh = FkSolver.fk_dh(self, theta1, theta2, theta3, theta4)
+                return FkSolver.fk_solver(table_dh[0])
 
         except TypeError as error:
             status = str(error)
@@ -173,10 +203,10 @@ class FkSolver:
             return return_error
 
     @staticmethod
-    def solve_user(dh_table) -> Tuple[int, List[Tuple[float, float, float]], str]:
+    def fk_solve_user(dh_table) -> Tuple[int, List[Tuple[float, float, float]], str]:
         """
         Calculate end effectors xyz pos. with given dh table.\n
         :param dh_table: Denavit–Hartenbergs table
         :return: alpha; xyz_pos_link; status: Orientation and list of xyz positions of each link end
         """
-        return FkSolver.solver(dh_table)
+        return FkSolver.fk_solver(dh_table)
