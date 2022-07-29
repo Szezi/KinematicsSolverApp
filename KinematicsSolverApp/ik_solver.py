@@ -11,12 +11,13 @@ class IkSolver:
         """
         Initials parameters and dimensions of robotic arm. \n
         Example: link1:[length, min range, max range] \n
-        links = {"link1": [118, -80, 80],
-         "link2": [150, 5, 175],
-         "link3": [150, - 115, 55],
-         "link4": [54, -85, 85],
-         "link5": [0, 0, 0]}
-
+        links = {"link1": [118, -80, 80],\n
+         "link2": [150, 5, 175],\n
+         "link3": [150, - 115, 55],\n
+         "link4": [54, -85, 85],\n
+         "link5": [0, 0, 0]}\n
+        If 3link robotic arm put 0 in link3 \n
+        if 4 link robotic arm no empty links \n
          :param links: dictionary
         """
         # Dictionary
