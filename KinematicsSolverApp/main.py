@@ -98,7 +98,7 @@ class MainWindow(QMainWindow):
 
         # IK
         self.ui.btn_ik_init.clicked.connect(lambda: AppFunctions.page_ik_init(self))
-        self.ui.btn_ik_solve.clicked.connect(lambda: AppFunctions.page_fk_solve(self))
+        self.ui.btn_ik_solve.clicked.connect(lambda: AppFunctions.page_ik_solve(self))
 
         ################################################################################################################
 
