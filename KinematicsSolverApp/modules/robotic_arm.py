@@ -1,5 +1,5 @@
-from KinematicsSolverApp.fk_solver import FkSolver
-from KinematicsSolverApp.ik_solver import IkSolver
+from KinematicsSolverApp.modules.fk_solver import FkSolver
+from KinematicsSolverApp.modules.ik_solver import IkSolver
 
 
 class RoboticArm(FkSolver, IkSolver):
