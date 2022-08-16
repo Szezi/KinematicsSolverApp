@@ -77,7 +77,7 @@ class FkSolver:
             else:
                 status = "Links dimensions ok"
                 print(status)
-                pass
+        return status
 
     def fk_dh(self, theta1: float, theta2: float, theta3: float, theta4: float) -> Tuple[np.array, str]:
         """
