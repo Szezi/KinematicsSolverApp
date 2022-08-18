@@ -189,6 +189,11 @@
     <file>50x50/icons8-workstation-50.png</file>
   </qresource>
   <qresource prefix="others">
+    <file>others/ex1_fk1.png</file>
+    <file>others/ex1_fk.PNG</file>
+    <file>others/ex1_solve.PNG</file>
+    <file>others/ex1_user.PNG</file>
+    <file>others/ex2_ik.PNG</file>
     <file>others/scheme2.png</file>
     <file>others/scheme.png</file>
     <file>24x24/icons_fk.png</file>

@@ -914,7 +914,7 @@ class Ui_MainWindow(object):
         self.tableWidget_fk_input.horizontalHeader().setDefaultSectionSize(120)
         self.tableWidget_fk_input.horizontalHeader().setProperty("showSortIndicator", True)
         self.tableWidget_fk_input.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget_fk_input.verticalHeader().setVisible(True)
+        self.tableWidget_fk_input.verticalHeader().setVisible(False)
         self.tableWidget_fk_input.verticalHeader().setCascadingSectionResizes(True)
         self.tableWidget_fk_input.verticalHeader().setDefaultSectionSize(33)
         self.tableWidget_fk_input.verticalHeader().setHighlightSections(True)
@@ -1897,99 +1897,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addItem(self.horizontalSpacer_16, 0, 0, 1, 1)
 
-        self.tableWidget_ik_input = QTableWidget(self.frame_ik_input)
-        if (self.tableWidget_ik_input.columnCount() < 3):
-            self.tableWidget_ik_input.setColumnCount(3)
-        __qtablewidgetitem186 = QTableWidgetItem()
-        self.tableWidget_ik_input.setHorizontalHeaderItem(0, __qtablewidgetitem186)
-        __qtablewidgetitem187 = QTableWidgetItem()
-        self.tableWidget_ik_input.setHorizontalHeaderItem(1, __qtablewidgetitem187)
-        __qtablewidgetitem188 = QTableWidgetItem()
-        self.tableWidget_ik_input.setHorizontalHeaderItem(2, __qtablewidgetitem188)
-        if (self.tableWidget_ik_input.rowCount() < 5):
-            self.tableWidget_ik_input.setRowCount(5)
-        __qtablewidgetitem189 = QTableWidgetItem()
-        self.tableWidget_ik_input.setVerticalHeaderItem(0, __qtablewidgetitem189)
-        __qtablewidgetitem190 = QTableWidgetItem()
-        self.tableWidget_ik_input.setVerticalHeaderItem(1, __qtablewidgetitem190)
-        __qtablewidgetitem191 = QTableWidgetItem()
-        self.tableWidget_ik_input.setVerticalHeaderItem(2, __qtablewidgetitem191)
-        __qtablewidgetitem192 = QTableWidgetItem()
-        self.tableWidget_ik_input.setVerticalHeaderItem(3, __qtablewidgetitem192)
-        __qtablewidgetitem193 = QTableWidgetItem()
-        self.tableWidget_ik_input.setVerticalHeaderItem(4, __qtablewidgetitem193)
-        __qtablewidgetitem194 = QTableWidgetItem()
-        __qtablewidgetitem194.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(0, 0, __qtablewidgetitem194)
-        __qtablewidgetitem195 = QTableWidgetItem()
-        __qtablewidgetitem195.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(0, 1, __qtablewidgetitem195)
-        __qtablewidgetitem196 = QTableWidgetItem()
-        __qtablewidgetitem196.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(0, 2, __qtablewidgetitem196)
-        __qtablewidgetitem197 = QTableWidgetItem()
-        __qtablewidgetitem197.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(1, 0, __qtablewidgetitem197)
-        __qtablewidgetitem198 = QTableWidgetItem()
-        __qtablewidgetitem198.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(1, 1, __qtablewidgetitem198)
-        __qtablewidgetitem199 = QTableWidgetItem()
-        __qtablewidgetitem199.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(1, 2, __qtablewidgetitem199)
-        __qtablewidgetitem200 = QTableWidgetItem()
-        __qtablewidgetitem200.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(2, 0, __qtablewidgetitem200)
-        __qtablewidgetitem201 = QTableWidgetItem()
-        __qtablewidgetitem201.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(2, 1, __qtablewidgetitem201)
-        __qtablewidgetitem202 = QTableWidgetItem()
-        __qtablewidgetitem202.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(2, 2, __qtablewidgetitem202)
-        __qtablewidgetitem203 = QTableWidgetItem()
-        __qtablewidgetitem203.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(3, 0, __qtablewidgetitem203)
-        __qtablewidgetitem204 = QTableWidgetItem()
-        __qtablewidgetitem204.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(3, 1, __qtablewidgetitem204)
-        __qtablewidgetitem205 = QTableWidgetItem()
-        __qtablewidgetitem205.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(3, 2, __qtablewidgetitem205)
-        __qtablewidgetitem206 = QTableWidgetItem()
-        __qtablewidgetitem206.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(4, 0, __qtablewidgetitem206)
-        __qtablewidgetitem207 = QTableWidgetItem()
-        __qtablewidgetitem207.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(4, 1, __qtablewidgetitem207)
-        __qtablewidgetitem208 = QTableWidgetItem()
-        __qtablewidgetitem208.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_input.setItem(4, 2, __qtablewidgetitem208)
-        self.tableWidget_ik_input.setObjectName(u"tableWidget_ik_input")
-        sizePolicy3.setHeightForWidth(self.tableWidget_ik_input.sizePolicy().hasHeightForWidth())
-        self.tableWidget_ik_input.setSizePolicy(sizePolicy3)
-        self.tableWidget_ik_input.setMinimumSize(QSize(386, 196))
-        self.tableWidget_ik_input.setMaximumSize(QSize(900, 16777215))
-        self.tableWidget_ik_input.setInputMethodHints(Qt.ImhDigitsOnly|Qt.ImhPreferNumbers)
-        self.tableWidget_ik_input.setFrameShape(QFrame.NoFrame)
-        self.tableWidget_ik_input.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.tableWidget_ik_input.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.tableWidget_ik_input.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
-        self.tableWidget_ik_input.setSelectionMode(QAbstractItemView.ExtendedSelection)
-        self.tableWidget_ik_input.setShowGrid(True)
-        self.tableWidget_ik_input.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_ik_input.horizontalHeader().setMinimumSectionSize(50)
-        self.tableWidget_ik_input.horizontalHeader().setDefaultSectionSize(120)
-        self.tableWidget_ik_input.horizontalHeader().setProperty("showSortIndicator", True)
-        self.tableWidget_ik_input.horizontalHeader().setStretchLastSection(True)
-        self.tableWidget_ik_input.verticalHeader().setVisible(False)
-        self.tableWidget_ik_input.verticalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_ik_input.verticalHeader().setMinimumSectionSize(30)
-        self.tableWidget_ik_input.verticalHeader().setDefaultSectionSize(33)
-        self.tableWidget_ik_input.verticalHeader().setHighlightSections(True)
-        self.tableWidget_ik_input.verticalHeader().setProperty("showSortIndicator", True)
-        self.tableWidget_ik_input.verticalHeader().setStretchLastSection(True)
-
-        self.gridLayout_6.addWidget(self.tableWidget_ik_input, 0, 1, 3, 1)
-
         self.btn_ik_init = QPushButton(self.frame_ik_input)
         self.btn_ik_init.setObjectName(u"btn_ik_init")
         sizePolicy4.setHeightForWidth(self.btn_ik_init.sizePolicy().hasHeightForWidth())
@@ -2018,27 +1925,32 @@ class Ui_MainWindow(object):
         self.gridLayout_6.addWidget(self.btn_ik_init, 2, 2, 1, 1)
 
         self.tableWidget_ik_xyz = QTableWidget(self.frame_ik_input)
-        if (self.tableWidget_ik_xyz.columnCount() < 3):
-            self.tableWidget_ik_xyz.setColumnCount(3)
-        __qtablewidgetitem209 = QTableWidgetItem()
-        self.tableWidget_ik_xyz.setHorizontalHeaderItem(0, __qtablewidgetitem209)
-        __qtablewidgetitem210 = QTableWidgetItem()
-        self.tableWidget_ik_xyz.setHorizontalHeaderItem(1, __qtablewidgetitem210)
-        __qtablewidgetitem211 = QTableWidgetItem()
-        self.tableWidget_ik_xyz.setHorizontalHeaderItem(2, __qtablewidgetitem211)
+        if (self.tableWidget_ik_xyz.columnCount() < 4):
+            self.tableWidget_ik_xyz.setColumnCount(4)
+        __qtablewidgetitem186 = QTableWidgetItem()
+        self.tableWidget_ik_xyz.setHorizontalHeaderItem(0, __qtablewidgetitem186)
+        __qtablewidgetitem187 = QTableWidgetItem()
+        self.tableWidget_ik_xyz.setHorizontalHeaderItem(1, __qtablewidgetitem187)
+        __qtablewidgetitem188 = QTableWidgetItem()
+        self.tableWidget_ik_xyz.setHorizontalHeaderItem(2, __qtablewidgetitem188)
+        __qtablewidgetitem189 = QTableWidgetItem()
+        self.tableWidget_ik_xyz.setHorizontalHeaderItem(3, __qtablewidgetitem189)
         if (self.tableWidget_ik_xyz.rowCount() < 1):
             self.tableWidget_ik_xyz.setRowCount(1)
-        __qtablewidgetitem212 = QTableWidgetItem()
-        self.tableWidget_ik_xyz.setVerticalHeaderItem(0, __qtablewidgetitem212)
-        __qtablewidgetitem213 = QTableWidgetItem()
-        __qtablewidgetitem213.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_xyz.setItem(0, 0, __qtablewidgetitem213)
-        __qtablewidgetitem214 = QTableWidgetItem()
-        __qtablewidgetitem214.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_xyz.setItem(0, 1, __qtablewidgetitem214)
-        __qtablewidgetitem215 = QTableWidgetItem()
-        __qtablewidgetitem215.setTextAlignment(Qt.AlignCenter);
-        self.tableWidget_ik_xyz.setItem(0, 2, __qtablewidgetitem215)
+        __qtablewidgetitem190 = QTableWidgetItem()
+        self.tableWidget_ik_xyz.setVerticalHeaderItem(0, __qtablewidgetitem190)
+        __qtablewidgetitem191 = QTableWidgetItem()
+        __qtablewidgetitem191.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_xyz.setItem(0, 0, __qtablewidgetitem191)
+        __qtablewidgetitem192 = QTableWidgetItem()
+        __qtablewidgetitem192.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_xyz.setItem(0, 1, __qtablewidgetitem192)
+        __qtablewidgetitem193 = QTableWidgetItem()
+        __qtablewidgetitem193.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_xyz.setItem(0, 2, __qtablewidgetitem193)
+        __qtablewidgetitem194 = QTableWidgetItem()
+        __qtablewidgetitem194.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_xyz.setItem(0, 3, __qtablewidgetitem194)
         self.tableWidget_ik_xyz.setObjectName(u"tableWidget_ik_xyz")
         sizePolicy3.setHeightForWidth(self.tableWidget_ik_xyz.sizePolicy().hasHeightForWidth())
         self.tableWidget_ik_xyz.setSizePolicy(sizePolicy3)
@@ -2050,15 +1962,108 @@ class Ui_MainWindow(object):
         self.tableWidget_ik_xyz.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.tableWidget_ik_xyz.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget_ik_xyz.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_ik_xyz.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidget_ik_xyz.horizontalHeader().setDefaultSectionSize(90)
         self.tableWidget_ik_xyz.horizontalHeader().setProperty("showSortIndicator", False)
-        self.tableWidget_ik_xyz.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget_ik_xyz.horizontalHeader().setStretchLastSection(False)
         self.tableWidget_ik_xyz.verticalHeader().setCascadingSectionResizes(True)
         self.tableWidget_ik_xyz.verticalHeader().setDefaultSectionSize(35)
         self.tableWidget_ik_xyz.verticalHeader().setProperty("showSortIndicator", False)
-        self.tableWidget_ik_xyz.verticalHeader().setStretchLastSection(True)
+        self.tableWidget_ik_xyz.verticalHeader().setStretchLastSection(False)
 
         self.gridLayout_6.addWidget(self.tableWidget_ik_xyz, 4, 1, 1, 1)
+
+        self.tableWidget_ik_input = QTableWidget(self.frame_ik_input)
+        if (self.tableWidget_ik_input.columnCount() < 3):
+            self.tableWidget_ik_input.setColumnCount(3)
+        __qtablewidgetitem195 = QTableWidgetItem()
+        self.tableWidget_ik_input.setHorizontalHeaderItem(0, __qtablewidgetitem195)
+        __qtablewidgetitem196 = QTableWidgetItem()
+        self.tableWidget_ik_input.setHorizontalHeaderItem(1, __qtablewidgetitem196)
+        __qtablewidgetitem197 = QTableWidgetItem()
+        self.tableWidget_ik_input.setHorizontalHeaderItem(2, __qtablewidgetitem197)
+        if (self.tableWidget_ik_input.rowCount() < 5):
+            self.tableWidget_ik_input.setRowCount(5)
+        __qtablewidgetitem198 = QTableWidgetItem()
+        self.tableWidget_ik_input.setVerticalHeaderItem(0, __qtablewidgetitem198)
+        __qtablewidgetitem199 = QTableWidgetItem()
+        self.tableWidget_ik_input.setVerticalHeaderItem(1, __qtablewidgetitem199)
+        __qtablewidgetitem200 = QTableWidgetItem()
+        self.tableWidget_ik_input.setVerticalHeaderItem(2, __qtablewidgetitem200)
+        __qtablewidgetitem201 = QTableWidgetItem()
+        self.tableWidget_ik_input.setVerticalHeaderItem(3, __qtablewidgetitem201)
+        __qtablewidgetitem202 = QTableWidgetItem()
+        self.tableWidget_ik_input.setVerticalHeaderItem(4, __qtablewidgetitem202)
+        __qtablewidgetitem203 = QTableWidgetItem()
+        __qtablewidgetitem203.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(0, 0, __qtablewidgetitem203)
+        __qtablewidgetitem204 = QTableWidgetItem()
+        __qtablewidgetitem204.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(0, 1, __qtablewidgetitem204)
+        __qtablewidgetitem205 = QTableWidgetItem()
+        __qtablewidgetitem205.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(0, 2, __qtablewidgetitem205)
+        __qtablewidgetitem206 = QTableWidgetItem()
+        __qtablewidgetitem206.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(1, 0, __qtablewidgetitem206)
+        __qtablewidgetitem207 = QTableWidgetItem()
+        __qtablewidgetitem207.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(1, 1, __qtablewidgetitem207)
+        __qtablewidgetitem208 = QTableWidgetItem()
+        __qtablewidgetitem208.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(1, 2, __qtablewidgetitem208)
+        __qtablewidgetitem209 = QTableWidgetItem()
+        __qtablewidgetitem209.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(2, 0, __qtablewidgetitem209)
+        __qtablewidgetitem210 = QTableWidgetItem()
+        __qtablewidgetitem210.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(2, 1, __qtablewidgetitem210)
+        __qtablewidgetitem211 = QTableWidgetItem()
+        __qtablewidgetitem211.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(2, 2, __qtablewidgetitem211)
+        __qtablewidgetitem212 = QTableWidgetItem()
+        __qtablewidgetitem212.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(3, 0, __qtablewidgetitem212)
+        __qtablewidgetitem213 = QTableWidgetItem()
+        __qtablewidgetitem213.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(3, 1, __qtablewidgetitem213)
+        __qtablewidgetitem214 = QTableWidgetItem()
+        __qtablewidgetitem214.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(3, 2, __qtablewidgetitem214)
+        __qtablewidgetitem215 = QTableWidgetItem()
+        __qtablewidgetitem215.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(4, 0, __qtablewidgetitem215)
+        __qtablewidgetitem216 = QTableWidgetItem()
+        __qtablewidgetitem216.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(4, 1, __qtablewidgetitem216)
+        __qtablewidgetitem217 = QTableWidgetItem()
+        __qtablewidgetitem217.setTextAlignment(Qt.AlignCenter);
+        self.tableWidget_ik_input.setItem(4, 2, __qtablewidgetitem217)
+        self.tableWidget_ik_input.setObjectName(u"tableWidget_ik_input")
+        sizePolicy3.setHeightForWidth(self.tableWidget_ik_input.sizePolicy().hasHeightForWidth())
+        self.tableWidget_ik_input.setSizePolicy(sizePolicy3)
+        self.tableWidget_ik_input.setMinimumSize(QSize(386, 196))
+        self.tableWidget_ik_input.setMaximumSize(QSize(900, 16777215))
+        self.tableWidget_ik_input.setInputMethodHints(Qt.ImhDigitsOnly|Qt.ImhPreferNumbers)
+        self.tableWidget_ik_input.setFrameShape(QFrame.NoFrame)
+        self.tableWidget_ik_input.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tableWidget_ik_input.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tableWidget_ik_input.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.tableWidget_ik_input.setSelectionMode(QAbstractItemView.ExtendedSelection)
+        self.tableWidget_ik_input.setShowGrid(True)
+        self.tableWidget_ik_input.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_ik_input.horizontalHeader().setMinimumSectionSize(50)
+        self.tableWidget_ik_input.horizontalHeader().setDefaultSectionSize(120)
+        self.tableWidget_ik_input.horizontalHeader().setProperty("showSortIndicator", True)
+        self.tableWidget_ik_input.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget_ik_input.verticalHeader().setVisible(False)
+        self.tableWidget_ik_input.verticalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_ik_input.verticalHeader().setMinimumSectionSize(30)
+        self.tableWidget_ik_input.verticalHeader().setDefaultSectionSize(33)
+        self.tableWidget_ik_input.verticalHeader().setHighlightSections(True)
+        self.tableWidget_ik_input.verticalHeader().setProperty("showSortIndicator", True)
+        self.tableWidget_ik_input.verticalHeader().setStretchLastSection(True)
+
+        self.gridLayout_6.addWidget(self.tableWidget_ik_input, 0, 1, 3, 1)
 
 
         self.gridLayout_17.addWidget(self.frame_ik_input, 0, 0, 1, 1)
@@ -2329,6 +2334,9 @@ class Ui_MainWindow(object):
         self.gridLayout_15.setObjectName(u"gridLayout_15")
         self.label_example_1 = QLabel(self.tab_set_examp1)
         self.label_example_1.setObjectName(u"label_example_1")
+        self.label_example_1.setPixmap(QPixmap(u":/others/others/ex1_fk1.png"))
+        self.label_example_1.setScaledContents(True)
+        self.label_example_1.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_15.addWidget(self.label_example_1, 0, 0, 1, 1)
 
@@ -2339,6 +2347,9 @@ class Ui_MainWindow(object):
         self.gridLayout_14.setObjectName(u"gridLayout_14")
         self.label_example_2 = QLabel(self.tab_set_examp2)
         self.label_example_2.setObjectName(u"label_example_2")
+        self.label_example_2.setPixmap(QPixmap(u":/others/others/ex2_ik.PNG"))
+        self.label_example_2.setScaledContents(True)
+        self.label_example_2.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_14.addWidget(self.label_example_2, 0, 0, 1, 1)
 
@@ -2444,10 +2455,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
-        self.tabWidget_fk.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
+        self.tabWidget_fk.setCurrentIndex(2)
         self.tabWidget.setCurrentIndex(0)
-        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2480,7 +2491,8 @@ class Ui_MainWindow(object):
         self.btn_home_FK.setText(QCoreApplication.translate("MainWindow", u"Forward kin.", None))
         self.btn_home_IK.setText(QCoreApplication.translate("MainWindow", u"Inverse kin.", None))
         self.btn_home_settings.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"FORWARD AND INVERSE KINEMATICS SOLVER", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"FORWARD AND INVERSE \n"
+" KINEMATICS SOLVER", None))
         self.label_2.setText("")
         self.textBrowser_fk.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -2820,45 +2832,45 @@ class Ui_MainWindow(object):
         __sortingEnabled7 = self.tableWidget_8.isSortingEnabled()
         self.tableWidget_8.setSortingEnabled(False)
         ___qtablewidgetitem134 = self.tableWidget_8.item(0, 0)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem135 = self.tableWidget_8.item(0, 1)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"118.0", None));
         ___qtablewidgetitem136 = self.tableWidget_8.item(0, 2)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem137 = self.tableWidget_8.item(0, 3)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"1.57", None));
         ___qtablewidgetitem138 = self.tableWidget_8.item(1, 0)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"1.57", None));
         ___qtablewidgetitem139 = self.tableWidget_8.item(1, 1)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem140 = self.tableWidget_8.item(1, 2)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"150.0", None));
         ___qtablewidgetitem141 = self.tableWidget_8.item(1, 3)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem142 = self.tableWidget_8.item(2, 0)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem143 = self.tableWidget_8.item(2, 1)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem144 = self.tableWidget_8.item(2, 2)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"150.0", None));
         ___qtablewidgetitem145 = self.tableWidget_8.item(2, 3)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem146 = self.tableWidget_8.item(3, 0)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem147 = self.tableWidget_8.item(3, 1)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem148 = self.tableWidget_8.item(3, 2)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"54.0", None));
         ___qtablewidgetitem149 = self.tableWidget_8.item(3, 3)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem150 = self.tableWidget_8.item(4, 0)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"-1.57", None));
         ___qtablewidgetitem151 = self.tableWidget_8.item(4, 1)
-        ___qtablewidgetitem151.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem152 = self.tableWidget_8.item(4, 2)
-        ___qtablewidgetitem152.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem152.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         ___qtablewidgetitem153 = self.tableWidget_8.item(4, 3)
-        ___qtablewidgetitem153.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem153.setText(QCoreApplication.translate("MainWindow", u"0.0", None));
         self.tableWidget_8.setSortingEnabled(__sortingEnabled7)
 
         self.label_fk_py.setText(QCoreApplication.translate("MainWindow", u"Py", None))
@@ -2870,76 +2882,80 @@ class Ui_MainWindow(object):
         self.btn_fk_user_sub.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.tabWidget_fk.setTabText(self.tabWidget_fk.indexOf(self.tab_fk_user), QCoreApplication.translate("MainWindow", u"User", None))
         self.btn_ik_solve.setText(QCoreApplication.translate("MainWindow", u"Solve", None))
-        ___qtablewidgetitem154 = self.tableWidget_ik_input.horizontalHeaderItem(0)
-        ___qtablewidgetitem154.setText(QCoreApplication.translate("MainWindow", u"L", None));
-        ___qtablewidgetitem155 = self.tableWidget_ik_input.horizontalHeaderItem(1)
-        ___qtablewidgetitem155.setText(QCoreApplication.translate("MainWindow", u"R-", None));
-        ___qtablewidgetitem156 = self.tableWidget_ik_input.horizontalHeaderItem(2)
-        ___qtablewidgetitem156.setText(QCoreApplication.translate("MainWindow", u"R+", None));
-        ___qtablewidgetitem157 = self.tableWidget_ik_input.verticalHeaderItem(0)
-        ___qtablewidgetitem157.setText(QCoreApplication.translate("MainWindow", u"L1", None));
-        ___qtablewidgetitem158 = self.tableWidget_ik_input.verticalHeaderItem(1)
-        ___qtablewidgetitem158.setText(QCoreApplication.translate("MainWindow", u"L2", None));
-        ___qtablewidgetitem159 = self.tableWidget_ik_input.verticalHeaderItem(2)
-        ___qtablewidgetitem159.setText(QCoreApplication.translate("MainWindow", u"L3", None));
-        ___qtablewidgetitem160 = self.tableWidget_ik_input.verticalHeaderItem(3)
-        ___qtablewidgetitem160.setText(QCoreApplication.translate("MainWindow", u"L4", None));
-        ___qtablewidgetitem161 = self.tableWidget_ik_input.verticalHeaderItem(4)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"L5", None));
-
-        __sortingEnabled8 = self.tableWidget_ik_input.isSortingEnabled()
-        self.tableWidget_ik_input.setSortingEnabled(False)
-        ___qtablewidgetitem162 = self.tableWidget_ik_input.item(0, 0)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"118", None));
-        ___qtablewidgetitem163 = self.tableWidget_ik_input.item(0, 1)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"-80", None));
-        ___qtablewidgetitem164 = self.tableWidget_ik_input.item(0, 2)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"80", None));
-        ___qtablewidgetitem165 = self.tableWidget_ik_input.item(1, 0)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"150", None));
-        ___qtablewidgetitem166 = self.tableWidget_ik_input.item(1, 1)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"5", None));
-        ___qtablewidgetitem167 = self.tableWidget_ik_input.item(1, 2)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"175", None));
-        ___qtablewidgetitem168 = self.tableWidget_ik_input.item(2, 0)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"150", None));
-        ___qtablewidgetitem169 = self.tableWidget_ik_input.item(2, 1)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"-115", None));
-        ___qtablewidgetitem170 = self.tableWidget_ik_input.item(2, 2)
-        ___qtablewidgetitem170.setText(QCoreApplication.translate("MainWindow", u"55", None));
-        ___qtablewidgetitem171 = self.tableWidget_ik_input.item(3, 0)
-        ___qtablewidgetitem171.setText(QCoreApplication.translate("MainWindow", u"54", None));
-        ___qtablewidgetitem172 = self.tableWidget_ik_input.item(3, 1)
-        ___qtablewidgetitem172.setText(QCoreApplication.translate("MainWindow", u"-85", None));
-        ___qtablewidgetitem173 = self.tableWidget_ik_input.item(3, 2)
-        ___qtablewidgetitem173.setText(QCoreApplication.translate("MainWindow", u"85", None));
-        ___qtablewidgetitem174 = self.tableWidget_ik_input.item(4, 0)
-        ___qtablewidgetitem174.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        ___qtablewidgetitem175 = self.tableWidget_ik_input.item(4, 1)
-        ___qtablewidgetitem175.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        ___qtablewidgetitem176 = self.tableWidget_ik_input.item(4, 2)
-        ___qtablewidgetitem176.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        self.tableWidget_ik_input.setSortingEnabled(__sortingEnabled8)
-
         self.btn_ik_init.setText(QCoreApplication.translate("MainWindow", u"Init", None))
-        ___qtablewidgetitem177 = self.tableWidget_ik_xyz.horizontalHeaderItem(0)
-        ___qtablewidgetitem177.setText(QCoreApplication.translate("MainWindow", u"Px", None));
-        ___qtablewidgetitem178 = self.tableWidget_ik_xyz.horizontalHeaderItem(1)
-        ___qtablewidgetitem178.setText(QCoreApplication.translate("MainWindow", u"Py", None));
-        ___qtablewidgetitem179 = self.tableWidget_ik_xyz.horizontalHeaderItem(2)
-        ___qtablewidgetitem179.setText(QCoreApplication.translate("MainWindow", u"Pz", None));
-        ___qtablewidgetitem180 = self.tableWidget_ik_xyz.verticalHeaderItem(0)
-        ___qtablewidgetitem180.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem154 = self.tableWidget_ik_xyz.horizontalHeaderItem(0)
+        ___qtablewidgetitem154.setText(QCoreApplication.translate("MainWindow", u"Px", None));
+        ___qtablewidgetitem155 = self.tableWidget_ik_xyz.horizontalHeaderItem(1)
+        ___qtablewidgetitem155.setText(QCoreApplication.translate("MainWindow", u"Py", None));
+        ___qtablewidgetitem156 = self.tableWidget_ik_xyz.horizontalHeaderItem(2)
+        ___qtablewidgetitem156.setText(QCoreApplication.translate("MainWindow", u"Pz", None));
+        ___qtablewidgetitem157 = self.tableWidget_ik_xyz.horizontalHeaderItem(3)
+        ___qtablewidgetitem157.setText(QCoreApplication.translate("MainWindow", u"Alfa", None));
+        ___qtablewidgetitem158 = self.tableWidget_ik_xyz.verticalHeaderItem(0)
+        ___qtablewidgetitem158.setText(QCoreApplication.translate("MainWindow", u"1", None));
 
-        __sortingEnabled9 = self.tableWidget_ik_xyz.isSortingEnabled()
+        __sortingEnabled8 = self.tableWidget_ik_xyz.isSortingEnabled()
         self.tableWidget_ik_xyz.setSortingEnabled(False)
-        ___qtablewidgetitem181 = self.tableWidget_ik_xyz.item(0, 0)
-        ___qtablewidgetitem181.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        ___qtablewidgetitem182 = self.tableWidget_ik_xyz.item(0, 1)
-        ___qtablewidgetitem182.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        ___qtablewidgetitem183 = self.tableWidget_ik_xyz.item(0, 2)
-        ___qtablewidgetitem183.setText(QCoreApplication.translate("MainWindow", u"472", None));
-        self.tableWidget_ik_xyz.setSortingEnabled(__sortingEnabled9)
+        ___qtablewidgetitem159 = self.tableWidget_ik_xyz.item(0, 0)
+        ___qtablewidgetitem159.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem160 = self.tableWidget_ik_xyz.item(0, 1)
+        ___qtablewidgetitem160.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem161 = self.tableWidget_ik_xyz.item(0, 2)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"472", None));
+        ___qtablewidgetitem162 = self.tableWidget_ik_xyz.item(0, 3)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"90", None));
+        self.tableWidget_ik_xyz.setSortingEnabled(__sortingEnabled8)
+
+        ___qtablewidgetitem163 = self.tableWidget_ik_input.horizontalHeaderItem(0)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"L", None));
+        ___qtablewidgetitem164 = self.tableWidget_ik_input.horizontalHeaderItem(1)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"R-", None));
+        ___qtablewidgetitem165 = self.tableWidget_ik_input.horizontalHeaderItem(2)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"R+", None));
+        ___qtablewidgetitem166 = self.tableWidget_ik_input.verticalHeaderItem(0)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"L1", None));
+        ___qtablewidgetitem167 = self.tableWidget_ik_input.verticalHeaderItem(1)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"L2", None));
+        ___qtablewidgetitem168 = self.tableWidget_ik_input.verticalHeaderItem(2)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"L3", None));
+        ___qtablewidgetitem169 = self.tableWidget_ik_input.verticalHeaderItem(3)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"L4", None));
+        ___qtablewidgetitem170 = self.tableWidget_ik_input.verticalHeaderItem(4)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("MainWindow", u"L5", None));
+
+        __sortingEnabled9 = self.tableWidget_ik_input.isSortingEnabled()
+        self.tableWidget_ik_input.setSortingEnabled(False)
+        ___qtablewidgetitem171 = self.tableWidget_ik_input.item(0, 0)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("MainWindow", u"118", None));
+        ___qtablewidgetitem172 = self.tableWidget_ik_input.item(0, 1)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("MainWindow", u"-80", None));
+        ___qtablewidgetitem173 = self.tableWidget_ik_input.item(0, 2)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("MainWindow", u"80", None));
+        ___qtablewidgetitem174 = self.tableWidget_ik_input.item(1, 0)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("MainWindow", u"150", None));
+        ___qtablewidgetitem175 = self.tableWidget_ik_input.item(1, 1)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem176 = self.tableWidget_ik_input.item(1, 2)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("MainWindow", u"175", None));
+        ___qtablewidgetitem177 = self.tableWidget_ik_input.item(2, 0)
+        ___qtablewidgetitem177.setText(QCoreApplication.translate("MainWindow", u"150", None));
+        ___qtablewidgetitem178 = self.tableWidget_ik_input.item(2, 1)
+        ___qtablewidgetitem178.setText(QCoreApplication.translate("MainWindow", u"-115", None));
+        ___qtablewidgetitem179 = self.tableWidget_ik_input.item(2, 2)
+        ___qtablewidgetitem179.setText(QCoreApplication.translate("MainWindow", u"55", None));
+        ___qtablewidgetitem180 = self.tableWidget_ik_input.item(3, 0)
+        ___qtablewidgetitem180.setText(QCoreApplication.translate("MainWindow", u"54", None));
+        ___qtablewidgetitem181 = self.tableWidget_ik_input.item(3, 1)
+        ___qtablewidgetitem181.setText(QCoreApplication.translate("MainWindow", u"-85", None));
+        ___qtablewidgetitem182 = self.tableWidget_ik_input.item(3, 2)
+        ___qtablewidgetitem182.setText(QCoreApplication.translate("MainWindow", u"85", None));
+        ___qtablewidgetitem183 = self.tableWidget_ik_input.item(4, 0)
+        ___qtablewidgetitem183.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem184 = self.tableWidget_ik_input.item(4, 1)
+        ___qtablewidgetitem184.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem185 = self.tableWidget_ik_input.item(4, 2)
+        ___qtablewidgetitem185.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        self.tableWidget_ik_input.setSortingEnabled(__sortingEnabled9)
 
         self.textBrowser_ik.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

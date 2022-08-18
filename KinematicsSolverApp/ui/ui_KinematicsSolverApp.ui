@@ -909,7 +909,7 @@ QPushButton:pressed {
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>1</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="layoutDirection">
@@ -1193,7 +1193,8 @@ QPushButton:pressed {
                           </font>
                          </property>
                          <property name="text">
-                          <string>FORWARD AND INVERSE KINEMATICS SOLVER</string>
+                          <string>FORWARD AND INVERSE 
+ KINEMATICS SOLVER</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -1271,7 +1272,7 @@ QPushButton:pressed {
                     </size>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>2</number>
                    </property>
                    <widget class="QWidget" name="tab_fk_input_parameters">
                     <attribute name="title">
@@ -1902,7 +1903,7 @@ p, li { white-space: pre-wrap; }
                            <bool>true</bool>
                           </attribute>
                           <attribute name="verticalHeaderVisible">
-                           <bool>true</bool>
+                           <bool>false</bool>
                           </attribute>
                           <attribute name="verticalHeaderCascadingSectionResizes">
                            <bool>true</bool>
@@ -3946,7 +3947,7 @@ QPushButton:pressed {
                           </column>
                           <item row="0" column="0">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3954,7 +3955,7 @@ QPushButton:pressed {
                           </item>
                           <item row="0" column="1">
                            <property name="text">
-                            <string>0</string>
+                            <string>118.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3962,7 +3963,7 @@ QPushButton:pressed {
                           </item>
                           <item row="0" column="2">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3970,7 +3971,7 @@ QPushButton:pressed {
                           </item>
                           <item row="0" column="3">
                            <property name="text">
-                            <string>0</string>
+                            <string>1.57</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3978,7 +3979,7 @@ QPushButton:pressed {
                           </item>
                           <item row="1" column="0">
                            <property name="text">
-                            <string>0</string>
+                            <string>1.57</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3986,7 +3987,7 @@ QPushButton:pressed {
                           </item>
                           <item row="1" column="1">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -3994,7 +3995,7 @@ QPushButton:pressed {
                           </item>
                           <item row="1" column="2">
                            <property name="text">
-                            <string>0</string>
+                            <string>150.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4002,7 +4003,7 @@ QPushButton:pressed {
                           </item>
                           <item row="1" column="3">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4010,7 +4011,7 @@ QPushButton:pressed {
                           </item>
                           <item row="2" column="0">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4018,7 +4019,7 @@ QPushButton:pressed {
                           </item>
                           <item row="2" column="1">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4026,7 +4027,7 @@ QPushButton:pressed {
                           </item>
                           <item row="2" column="2">
                            <property name="text">
-                            <string>0</string>
+                            <string>150.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4034,7 +4035,7 @@ QPushButton:pressed {
                           </item>
                           <item row="2" column="3">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4042,7 +4043,7 @@ QPushButton:pressed {
                           </item>
                           <item row="3" column="0">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4050,7 +4051,7 @@ QPushButton:pressed {
                           </item>
                           <item row="3" column="1">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4058,7 +4059,7 @@ QPushButton:pressed {
                           </item>
                           <item row="3" column="2">
                            <property name="text">
-                            <string>0</string>
+                            <string>54.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4066,7 +4067,7 @@ QPushButton:pressed {
                           </item>
                           <item row="3" column="3">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4074,7 +4075,7 @@ QPushButton:pressed {
                           </item>
                           <item row="4" column="0">
                            <property name="text">
-                            <string>0</string>
+                            <string>-1.57</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4082,7 +4083,7 @@ QPushButton:pressed {
                           </item>
                           <item row="4" column="1">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4090,7 +4091,7 @@ QPushButton:pressed {
                           </item>
                           <item row="4" column="2">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4098,7 +4099,7 @@ QPushButton:pressed {
                           </item>
                           <item row="4" column="3">
                            <property name="text">
-                            <string>0</string>
+                            <string>0.0</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -4738,6 +4739,186 @@ QPushButton:pressed {
                           </property>
                          </spacer>
                         </item>
+                        <item row="2" column="2">
+                         <widget class="QPushButton" name="btn_ik_init">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="sizeIncrement">
+                           <size>
+                            <width>10</width>
+                            <height>10</height>
+                           </size>
+                          </property>
+                          <property name="baseSize">
+                           <size>
+                            <width>100</width>
+                            <height>100</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Segoe UI</family>
+                            <pointsize>10</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton {	
+	color: rgb(222, 222, 222);
+    border: 2px solid #555;
+    border-radius: 25px;
+    border-style: outset;
+	background-color: rgb(2, 50, 70);
+    padding: 5px;
+}
+QPushButton:hover {
+background-color: rgb(40, 112, 148);
+}
+QPushButton:pressed {	
+	background-color: rgb(85, 170, 255);
+}</string>
+                          </property>
+                          <property name="text">
+                           <string>Init</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="4" column="1">
+                         <widget class="QTableWidget" name="tableWidget_ik_xyz">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>386</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>900</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="inputMethodHints">
+                           <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="verticalScrollBarPolicy">
+                           <enum>Qt::ScrollBarAlwaysOff</enum>
+                          </property>
+                          <property name="horizontalScrollBarPolicy">
+                           <enum>Qt::ScrollBarAlwaysOff</enum>
+                          </property>
+                          <property name="sizeAdjustPolicy">
+                           <enum>QAbstractScrollArea::AdjustToContents</enum>
+                          </property>
+                          <attribute name="horizontalHeaderCascadingSectionResizes">
+                           <bool>true</bool>
+                          </attribute>
+                          <attribute name="horizontalHeaderDefaultSectionSize">
+                           <number>90</number>
+                          </attribute>
+                          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                           <bool>false</bool>
+                          </attribute>
+                          <attribute name="horizontalHeaderStretchLastSection">
+                           <bool>false</bool>
+                          </attribute>
+                          <attribute name="verticalHeaderCascadingSectionResizes">
+                           <bool>true</bool>
+                          </attribute>
+                          <attribute name="verticalHeaderDefaultSectionSize">
+                           <number>35</number>
+                          </attribute>
+                          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                           <bool>false</bool>
+                          </attribute>
+                          <attribute name="verticalHeaderStretchLastSection">
+                           <bool>false</bool>
+                          </attribute>
+                          <row>
+                           <property name="text">
+                            <string>1</string>
+                           </property>
+                          </row>
+                          <column>
+                           <property name="text">
+                            <string>Px</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Py</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Pz</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Alfa</string>
+                           </property>
+                          </column>
+                          <item row="0" column="0">
+                           <property name="text">
+                            <string>0</string>
+                           </property>
+                           <property name="textAlignment">
+                            <set>AlignCenter</set>
+                           </property>
+                          </item>
+                          <item row="0" column="1">
+                           <property name="text">
+                            <string>0</string>
+                           </property>
+                           <property name="textAlignment">
+                            <set>AlignCenter</set>
+                           </property>
+                          </item>
+                          <item row="0" column="2">
+                           <property name="text">
+                            <string>472</string>
+                           </property>
+                           <property name="textAlignment">
+                            <set>AlignCenter</set>
+                           </property>
+                          </item>
+                          <item row="0" column="3">
+                           <property name="text">
+                            <string>90</string>
+                           </property>
+                           <property name="textAlignment">
+                            <set>AlignCenter</set>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
                         <item row="0" column="1" rowspan="3">
                          <widget class="QTableWidget" name="tableWidget_ik_input">
                           <property name="sizePolicy">
@@ -4970,173 +5151,6 @@ QPushButton:pressed {
                           <item row="4" column="2">
                            <property name="text">
                             <string>0</string>
-                           </property>
-                           <property name="textAlignment">
-                            <set>AlignCenter</set>
-                           </property>
-                          </item>
-                         </widget>
-                        </item>
-                        <item row="2" column="2">
-                         <widget class="QPushButton" name="btn_ik_init">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="sizeIncrement">
-                           <size>
-                            <width>10</width>
-                            <height>10</height>
-                           </size>
-                          </property>
-                          <property name="baseSize">
-                           <size>
-                            <width>100</width>
-                            <height>100</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <family>Segoe UI</family>
-                            <pointsize>10</pointsize>
-                           </font>
-                          </property>
-                          <property name="layoutDirection">
-                           <enum>Qt::LeftToRight</enum>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QPushButton {	
-	color: rgb(222, 222, 222);
-    border: 2px solid #555;
-    border-radius: 25px;
-    border-style: outset;
-	background-color: rgb(2, 50, 70);
-    padding: 5px;
-}
-QPushButton:hover {
-background-color: rgb(40, 112, 148);
-}
-QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
-}</string>
-                          </property>
-                          <property name="text">
-                           <string>Init</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="4" column="1">
-                         <widget class="QTableWidget" name="tableWidget_ik_xyz">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>386</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>900</width>
-                            <height>16777215</height>
-                           </size>
-                          </property>
-                          <property name="inputMethodHints">
-                           <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::NoFrame</enum>
-                          </property>
-                          <property name="verticalScrollBarPolicy">
-                           <enum>Qt::ScrollBarAlwaysOff</enum>
-                          </property>
-                          <property name="horizontalScrollBarPolicy">
-                           <enum>Qt::ScrollBarAlwaysOff</enum>
-                          </property>
-                          <property name="sizeAdjustPolicy">
-                           <enum>QAbstractScrollArea::AdjustToContents</enum>
-                          </property>
-                          <attribute name="horizontalHeaderCascadingSectionResizes">
-                           <bool>true</bool>
-                          </attribute>
-                          <attribute name="horizontalHeaderDefaultSectionSize">
-                           <number>120</number>
-                          </attribute>
-                          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-                           <bool>false</bool>
-                          </attribute>
-                          <attribute name="horizontalHeaderStretchLastSection">
-                           <bool>true</bool>
-                          </attribute>
-                          <attribute name="verticalHeaderCascadingSectionResizes">
-                           <bool>true</bool>
-                          </attribute>
-                          <attribute name="verticalHeaderDefaultSectionSize">
-                           <number>35</number>
-                          </attribute>
-                          <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-                           <bool>false</bool>
-                          </attribute>
-                          <attribute name="verticalHeaderStretchLastSection">
-                           <bool>true</bool>
-                          </attribute>
-                          <row>
-                           <property name="text">
-                            <string>1</string>
-                           </property>
-                          </row>
-                          <column>
-                           <property name="text">
-                            <string>Px</string>
-                           </property>
-                          </column>
-                          <column>
-                           <property name="text">
-                            <string>Py</string>
-                           </property>
-                          </column>
-                          <column>
-                           <property name="text">
-                            <string>Pz</string>
-                           </property>
-                          </column>
-                          <item row="0" column="0">
-                           <property name="text">
-                            <string>0</string>
-                           </property>
-                           <property name="textAlignment">
-                            <set>AlignCenter</set>
-                           </property>
-                          </item>
-                          <item row="0" column="1">
-                           <property name="text">
-                            <string>0</string>
-                           </property>
-                           <property name="textAlignment">
-                            <set>AlignCenter</set>
-                           </property>
-                          </item>
-                          <item row="0" column="2">
-                           <property name="text">
-                            <string>472</string>
                            </property>
                            <property name="textAlignment">
                             <set>AlignCenter</set>
@@ -5821,7 +5835,7 @@ p, li { white-space: pre-wrap; }
                  <item row="0" column="0">
                   <widget class="QTabWidget" name="tabWidget_2">
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
                    <widget class="QWidget" name="tab_set_about">
                     <attribute name="title">
@@ -5864,6 +5878,15 @@ p, li { white-space: pre-wrap; }
                        <property name="text">
                         <string/>
                        </property>
+                       <property name="pixmap">
+                        <pixmap resource="icons/icons.qrc">:/others/others/ex1_fk1.png</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
                       </widget>
                      </item>
                     </layout>
@@ -5877,6 +5900,15 @@ p, li { white-space: pre-wrap; }
                       <widget class="QLabel" name="label_example_2">
                        <property name="text">
                         <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap resource="icons/icons.qrc">:/others/others/ex2_ik.PNG</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
                        </property>
                       </widget>
                      </item>
