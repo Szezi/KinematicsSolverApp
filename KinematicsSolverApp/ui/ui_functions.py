@@ -154,13 +154,15 @@ class UIFunctions(MainWindow):
     def AddRow(self):
         """ Create empty row """
 
-        self.ui.tableWidget_8.insertRow(self.ui.tableWidget.currentRow() + 1)
+        self.ui.tableWidget_8.insertRow(self.ui.tableWidget_8.currentRow() + 1)
 
     def RemoveRow(self):
         """ Remove selected row """
 
         if self.ui.tableWidget_8.rowCount() > 0:
-            self.ui.tableWidget_8.removeRow(self.ui.tableWidget.currentRow())
+            self.ui.tableWidget_8.removeRow(self.ui.tableWidget_8.currentRow())
+        else:
+            pass
 
     # STATUS DISPLAY
     def log_list(self, log):
