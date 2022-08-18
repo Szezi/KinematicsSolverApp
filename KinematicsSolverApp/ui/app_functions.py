@@ -69,13 +69,18 @@ class AppFunctions(MainWindow):
 
         :return: Forward kinematics
         """
-        user_dh = UIFunctions.read_user_dh(self)
+        user_dh = UIFunctions.read_user_dh(self).astype(float)
+
         fk_user_result = RoboticArm.fk_solve_user(user_dh)
-        print(fk_user_result)
+
+        # Display status log
+        UIFunctions.log_list(self, fk_user_result[2])
+
         user_px = fk_user_result[1][3][0]
         user_py = fk_user_result[1][3][1]
         user_pz = fk_user_result[1][3][2]
 
+        # Display on LCD
         self.ui.lcdNumber_fk_px.display(user_px)
         self.ui.lcdNumber_fk_py.display(user_py)
         self.ui.lcdNumber_fk_pz.display(user_pz)
