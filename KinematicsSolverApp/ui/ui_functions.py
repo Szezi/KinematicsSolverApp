@@ -4,6 +4,7 @@ import os
 import datetime as dt
 import numpy
 import numpy as np
+from typing import Tuple
 
 from KinematicsSolverApp.main import MainWindow
 from KinematicsSolverApp.main import *
@@ -165,7 +166,7 @@ class UIFunctions(MainWindow):
             pass
 
     # STATUS DISPLAY
-    def log_list(self, log):
+    def log_list(self, log: str):
         """ Print given string in log"""
 
         log_time = dt.datetime.now().strftime("%H:%M:%S")
@@ -180,26 +181,35 @@ class UIFunctions(MainWindow):
         else:
             self.logger.info(log)
 
-    def robotic_init_from_qtable_to_dict(self, qtable):
+    def robotic_init_from_qtable_to_dict(self, qtable: QTableWidget) -> dict:
+        """
+        Read init parameters from qtable and write to dictionary.
+        :param qtable: qtablewidget
+        :return: init_dict
+        """
 
+        # Read length if links
         l1 = qtable.item(0, 0).text()
         l2 = qtable.item(1, 0).text()
         l3 = qtable.item(2, 0).text()
         l4 = qtable.item(3, 0).text()
         l5 = qtable.item(4, 0).text()
 
+        # Read min value of joint range
         r1_min = qtable.item(0, 1).text()
         r2_min = qtable.item(1, 1).text()
         r3_min = qtable.item(2, 1).text()
         r4_min = qtable.item(3, 1).text()
         r5_min = qtable.item(4, 1).text()
 
+        # Read max value of joint range
         r1_max = qtable.item(0, 2).text()
         r2_max = qtable.item(1, 2).text()
         r3_max = qtable.item(2, 2).text()
         r4_max = qtable.item(3, 2).text()
         r5_max = qtable.item(4, 2).text()
 
+        # Write into dictionary
         init_dict = {"link1": [l1, r1_min, r1_max],
                      "link2": [l2, r2_min, r2_max],
                      "link3": [l3, r3_min, r3_max],
@@ -208,20 +218,33 @@ class UIFunctions(MainWindow):
 
         return init_dict
 
-    def read_user_dh(self):
+    def read_user_dh(self) -> np.array:
+        """
+        Read values from qtable widget of users dh parameters and return array.
+        :return:  user_dh
+        """
+
+        # QTableWidget of users dh parameters
         qtable = self.ui.tableWidget_8
 
+        # Write values to array
         user_dh = np.array([[qtable.item(0, 0).text(), qtable.item(0, 1).text(), qtable.item(0, 2).text(), qtable.item(0, 3).text()],
                            [qtable.item(1, 0).text(), qtable.item(1, 1).text(), qtable.item(1, 2).text(), qtable.item(1, 3).text()],
                            [qtable.item(2, 0).text(), qtable.item(2, 1).text(), qtable.item(2, 2).text(), qtable.item(2, 3).text()],
                            [qtable.item(3, 0).text(), qtable.item(3, 1).text(), qtable.item(3, 2).text(), qtable.item(3, 3).text()],
                            [qtable.item(4, 0).text(), qtable.item(4, 1).text(), qtable.item(4, 2).text(), qtable.item(4, 3).text()]])
+
         return user_dh
 
-    def robotic_input_fk(self):
+    def robotic_input_fk(self) -> Tuple[str, str, str, str]:
+        """
+        Read input parameters from QTableWidget to calculate FK.
+        :return: theta1, theta2, theta3, theta4
+        """
 
+        # QTableWidget of input parameters
         qtable = self.ui.tableWidget_fk_theta
-
+        # Read values
         theta1 = qtable.item(0, 0).text()
         theta2 = qtable.item(0, 1).text()
         theta3 = qtable.item(0, 2).text()
@@ -229,26 +252,39 @@ class UIFunctions(MainWindow):
 
         return theta1, theta2, theta3, theta4
 
-    def robotic_input_ik(self):
+    def robotic_input_ik(self) -> Tuple[str, str, str, str]:
+        """
+        Read input parameters from QTableWidget to calculate IK.
+        :return:  px, py, pz, alfa
+        """
 
+        # QTableWidget of input parameters
         qtable = self.ui.tableWidget_ik_xyz
 
+        # Read values
         px = qtable.item(0, 0).text()
         py = qtable.item(0, 1).text()
         pz = qtable.item(0, 2).text()
-        # alfa = float(qtable.item(0, 3).text())
-        alfa = 90
+        alfa = qtable.item(0, 3).text()
+
         return px, py, pz, alfa
 
-    def write_to_dh_table(self):
+    def write_to_dh_table(self) -> None:
+        """ Write created dh table into QTableWidget"""
+
+        # Get input parameters
         thetas = UIFunctions.robotic_input_fk(self)
+
         try:
+            # Get input parameters and convert to float
             thetas = tuple(float(item) for item in thetas)
         except ValueError:
             status = "Error: Values must be float"
             UIFunctions.log_list(self, status)
         else:
+            # Create dh table
             fk_dh = self.robotic_arm_fk.fk_dh(thetas[0], thetas[1], thetas[2], thetas[3])
+
             # Display status log
             UIFunctions.log_list(self, fk_dh[1])
             table_ui = self.ui.tableWidget_fk_dh
@@ -265,7 +301,13 @@ class UIFunctions(MainWindow):
                     table_ui.setItem(row, i, QTableWidgetItem(str(values[i])))
                 row += 1
 
-    def write_matrix_to_table(self, qtable, Ti):
+    def write_matrix_to_table(self, qtable: QTableWidget, Ti: int) -> None:
+        """
+        Write homogeneous matrix to QTableWidget.
+        :param qtable: QTableWidget
+        :param Ti: Number of transformation
+        """
+
         thetas = UIFunctions.robotic_input_fk(self)
         fk_dh = self.robotic_arm_fk.fk_dh(float(thetas[0]), float(thetas[1]), float(thetas[2]), float(thetas[3]))
         table_ui = qtable
@@ -288,12 +330,20 @@ class UIFunctions(MainWindow):
                 table_ui.setItem(row, i, QTableWidgetItem(str(values[i])))
             row += 1
 
-    def display_ik_results(self, config_1, config_2):
+    def display_ik_results(self, config_1: list, config_2: list) -> None:
+        """
+        Display values of calculated configs on lcds.
+        :param config_1:
+        :param config_2:
+        """
+
+        # Config 1
         self.ui.lcdNumber_ik_theta1.display(config_1[0][0])
         self.ui.lcdNumber_ik_theta2.display(config_1[0][1])
         self.ui.lcdNumber_ik_theta3.display(config_1[0][2])
         self.ui.lcdNumber_ik_theta4.display(config_1[0][3])
 
+        # Config 2
         self.ui.lcdNumber_ik_theta1_2.display(config_2[0][0])
         self.ui.lcdNumber_ik_theta2_2.display(config_2[0][1])
         self.ui.lcdNumber_ik_theta3_2.display(config_2[0][2])
