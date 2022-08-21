@@ -330,6 +330,31 @@ class UIFunctions(MainWindow):
                 table_ui.setItem(row, i, QTableWidgetItem(str(values[i])))
             row += 1
 
+    def clear_matrix_to_table(self, qtable: QTableWidget, Ti: int) -> None:
+        """
+        Write homogeneous matrix to QTableWidget.
+        :param qtable: QTableWidget
+        :param Ti: Number of transformation
+        """
+
+        table_ui = qtable
+
+        matrix = np.array([[0.0, 0.0, 0.0, 0.0],
+                           [0.0, 0.0, 0.0, 0.0],
+                           [0.0, 0.0, 0.0, 0.0],
+                           [0.0, 0.0, 0.0, 0.0]])
+        # Add items to table
+        row = 0
+        for j in range(0, 4):
+            values = [round(matrix[j][0],2),
+                      round(matrix[j][1],2),
+                      round(matrix[j][2],2),
+                      round(matrix[j][3],2)]
+
+            for i in range(0, table_ui.columnCount()):
+                table_ui.setItem(row, i, QTableWidgetItem(str(values[i])))
+            row += 1
+
     def display_ik_results(self, config_1: list, config_2: list) -> None:
         """
         Display values of calculated configs on lcds.

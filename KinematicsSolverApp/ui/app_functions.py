@@ -43,6 +43,13 @@ class AppFunctions(MainWindow):
 
         :return: [Px, Py, Pz]
         """
+        # Clear before calculations
+        UIFunctions.clear_matrix_to_table(self, self.ui.tableWidget_fk_T12, 2)
+        UIFunctions.clear_matrix_to_table(self, self.ui.tableWidget_fk_T13, 3)
+        UIFunctions.clear_matrix_to_table(self, self.ui.tableWidget_fk_T14, 4)
+        UIFunctions.clear_matrix_to_table(self, self.ui.tableWidget_fk_T15, 5)
+
+        # Read input parameters
         thetas = UIFunctions.robotic_input_fk(self)
 
         try:
@@ -69,21 +76,25 @@ class AppFunctions(MainWindow):
 
         :return: Forward kinematics
         """
-        user_dh = UIFunctions.read_user_dh(self).astype(float)
+        try:
+            user_dh = UIFunctions.read_user_dh(self).astype(float)
+        except ValueError:
+            status = "Error: Values must be float"
+            UIFunctions.log_list(self, status)
+        else:
+            fk_user_result = RoboticArm.fk_solve_user(user_dh)
 
-        fk_user_result = RoboticArm.fk_solve_user(user_dh)
+            # Display status log
+            UIFunctions.log_list(self, fk_user_result[2])
 
-        # Display status log
-        UIFunctions.log_list(self, fk_user_result[2])
+            user_px = fk_user_result[1][3][0]
+            user_py = fk_user_result[1][3][1]
+            user_pz = fk_user_result[1][3][2]
 
-        user_px = fk_user_result[1][3][0]
-        user_py = fk_user_result[1][3][1]
-        user_pz = fk_user_result[1][3][2]
-
-        # Display on LCD
-        self.ui.lcdNumber_fk_px.display(user_px)
-        self.ui.lcdNumber_fk_py.display(user_py)
-        self.ui.lcdNumber_fk_pz.display(user_pz)
+            # Display on LCD
+            self.ui.lcdNumber_fk_px.display(user_px)
+            self.ui.lcdNumber_fk_py.display(user_py)
+            self.ui.lcdNumber_fk_pz.display(user_pz)
 
     def page_ik_init(self):
         """
