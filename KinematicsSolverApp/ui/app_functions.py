@@ -109,6 +109,8 @@ class AppFunctions(MainWindow):
         Calculate joints values of robotic arm with given xyz position. \n
         :return: [theta1, theta2, theta3, theta4]
         """
+        # Clear lcd
+        UIFunctions.display_ik_results(self, [[0.0, 0.0, 0.0, 0.0], "clear"], [[0.0, 0.0, 0.0, 0.0], "clear"])
 
         xyz = UIFunctions.robotic_input_ik(self)
         try:
@@ -120,9 +122,6 @@ class AppFunctions(MainWindow):
             self.robotic_arm_ik.ik_solver(xyz[0], xyz[1], xyz[2], xyz[3])
             config_1 = self.robotic_arm_ik.ik_get_config1()
             config_2 = self.robotic_arm_ik.ik_get_config2()
-
-            # Clear lcd
-            UIFunctions.display_ik_results(self, [[0.0, 0.0, 0.0, 0.0], "clear"], [[0.0, 0.0, 0.0, 0.0], "clear"])
 
             # Display results
             UIFunctions.display_ik_results(self, config_1, config_2)
