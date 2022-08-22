@@ -76,6 +76,7 @@ class AppFunctions(MainWindow):
 
         :return: Forward kinematics
         """
+        UIFunctions.read_user_dh(self)
         try:
             user_dh = UIFunctions.read_user_dh(self).astype(float)
         except ValueError:
@@ -83,7 +84,7 @@ class AppFunctions(MainWindow):
             UIFunctions.log_list(self, status)
         else:
             fk_user_result = RoboticArm.fk_solve_user(user_dh)
-
+            print(fk_user_result)
             # Display status log
             UIFunctions.log_list(self, fk_user_result[2])
 

@@ -227,13 +227,16 @@ class UIFunctions(MainWindow):
         # QTableWidget of users dh parameters
         qtable = self.ui.tableWidget_8
 
-        # Write values to array
-        user_dh = np.array([[qtable.item(0, 0).text(), qtable.item(0, 1).text(), qtable.item(0, 2).text(), qtable.item(0, 3).text()],
-                           [qtable.item(1, 0).text(), qtable.item(1, 1).text(), qtable.item(1, 2).text(), qtable.item(1, 3).text()],
-                           [qtable.item(2, 0).text(), qtable.item(2, 1).text(), qtable.item(2, 2).text(), qtable.item(2, 3).text()],
-                           [qtable.item(3, 0).text(), qtable.item(3, 1).text(), qtable.item(3, 2).text(), qtable.item(3, 3).text()],
-                           [qtable.item(4, 0).text(), qtable.item(4, 1).text(), qtable.item(4, 2).text(), qtable.item(4, 3).text()]])
+        # Create empty list
+        user_dh = []
 
+        # Write values to list row by row
+        for row in range(0, qtable.rowCount()):
+            values = [qtable.item(row, 0).text(), qtable.item(row, 1).text(), qtable.item(row, 2).text(), qtable.item(row, 3).text()]
+            user_dh.append(values)
+
+        # Write values to array
+        user_dh = np.array(user_dh)
         return user_dh
 
     def robotic_input_fk(self) -> Tuple[str, str, str, str]:
