@@ -1,0 +1,5 @@
+pytest~=7.1.2
+coverage~=6.4.2
+numpy~=1.21.6
+setuptools~=57.0.0
+PySide2~=5.15.2.1
