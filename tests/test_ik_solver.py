@@ -2,7 +2,7 @@ import pytest
 import coverage
 import sys
 
-from KinematicsSolverApp import ik_solver
+from KinematicsSolverApp.modules import ik_solver
 
 
 class TestIkSolver:

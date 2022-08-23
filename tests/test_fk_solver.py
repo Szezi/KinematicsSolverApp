@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import math
 
-from KinematicsSolverApp import fk_solver
+from KinematicsSolverApp.modules import fk_solver
 
 
 class TestFkSolver:
@@ -153,3 +153,12 @@ class TestFkSolver:
         result = (fk_solver.FkSolver.fk_solve_user(table_dh))
         assert result == (90, [(0.0, 0.0, 268.0), (0.0, 0.0, 418.0), (0.0, 0.0, 472.0), (0.0, 0.0, 472.0)],
                           'Forward kinematics calculations ended successfully')
+
+    def test_solve_user_zero_division(self):
+        table_dh = np.array([[0, 118, 0, math.radians(90)],
+                             [math.radians(90), 0, 150, 0],
+                             [0, 0, 150, 0],
+                             [0, 0, 0, 0],
+                             [math.radians(-90), 0, 0, 0]])
+        result = (fk_solver.FkSolver.fk_solve_user(table_dh))
+        assert result == (0, [(0, 0, 0)], 'ZeroDivisionError: Table_dh[-2][-2] must be != 0')
