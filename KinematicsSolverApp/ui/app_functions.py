@@ -1,9 +1,9 @@
 """ Module contains class AppFunctions that contains created functions to control application"""
-from KinematicsSolverApp.main import *
-from KinematicsSolverApp.main import MainWindow
-from KinematicsSolverApp.ui.ui_functions import *
+from main import *
+from main import MainWindow
+from ui.ui_functions import *
 
-from KinematicsSolverApp.modules.robotic_arm import RoboticArm
+from modules.robotic_arm import RoboticArm
 
 
 class AppFunctions(MainWindow):

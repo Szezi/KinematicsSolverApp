@@ -10,13 +10,13 @@ sys \n
 """
 
 # GUI FILE
-from KinematicsSolverApp.ui.ui_KinematicsSolverApp import Ui_MainWindow
+from ui.ui_KinematicsSolverApp import Ui_MainWindow
 
 # IMPORT FUNCTIONS
-from KinematicsSolverApp.ui.ui_functions import *
+from ui.ui_functions import *
 
 # ==> APP FUNCTIONS
-from KinematicsSolverApp.ui.app_functions import *
+from ui.app_functions import *
 
 import logging
 

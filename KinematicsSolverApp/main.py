@@ -7,7 +7,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
                            QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
-from KinematicsSolverApp.app_modules import *
+from app_modules import *
 
 
 class MainWindow(QMainWindow):

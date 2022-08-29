@@ -6,8 +6,8 @@ import numpy
 import numpy as np
 from typing import Tuple
 
-from KinematicsSolverApp.main import MainWindow
-from KinematicsSolverApp.main import *
+from main import MainWindow
+from main import *
 
 GLOBAL_STATE = 0
 
