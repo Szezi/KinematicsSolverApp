@@ -6,5 +6,5 @@ setup(
     url='https://github.com/Szezi/KinematicsSolverApp',
     license='GNU General Public License v3.0',
     author='Daniel Sziling',
-    description='Desktop application calculate forward and inverse kinematics of robotic arm',
+    description='Desktop application to calculate forward and inverse kinematics of robotic arm',
 )
