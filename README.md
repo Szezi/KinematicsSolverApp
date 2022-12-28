@@ -58,7 +58,15 @@ To run this project, create virtual environment and install it locally.
    $ pip install -r requirements.txt
    ```
 3. Run main.py
-   
+
+### MacOS
+
+In case of using MacOS add in main.py
+```sh
+import os
+os.environ['QT_MAC_WANTS_LAYER'] = '1'
+```
+Also if there is issue with fonts, change used fonts families in ui_KinematicsSolverApp.py for example to Helvetica.
 ### Technologies
 
 * [Python](https://www.python.org/downloads/release/python-370/)
